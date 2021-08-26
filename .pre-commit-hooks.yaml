@@ -3,3 +3,4 @@
     description: Adds Rally user story and defect URL's based on the feature/defect name
     entry: feature-defect-rally
     language: script
+    stages: [prepare-commit-msg]
