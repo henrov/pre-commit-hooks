@@ -111,9 +111,11 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 
 # main entry to the program
 def main() -> None:
+    direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
     if len(sys.argv) > 1 and sys.argv[1] == "--":
         formatted_id_list = set([arg.upper() for arg in sys.argv[2:]])
+        direct_mode = True
     else:
         if len(sys.argv) < 4:
             print("too few arguments for a prepare-commit-msg hook")
@@ -134,14 +136,19 @@ def main() -> None:
         print("no valid ID's specified on the command line")
         sys.exit(1)
     else:
-        with open(commit_msg_file, "r") as f:
-            commit_msg = f.read()
+        if not direct_mode:
+            with open(commit_msg_file, "r") as f:
+                commit_msg = f.read()
         for formatted_id in formatted_id_list:
             entity, prefix = get_entity_and_prefix(formatted_id)
             value = rally_cache.get_rally_details(entity, prefix, formatted_id)
-            with open(commit_msg_file, "w") as f:
-                f.write(value)
-                f.write(commit_msg)
+            if direct_mode:
+                print(value)
+            else:
+                with open(commit_msg_file, "w") as f:
+                    f.write(value)
+                    f.write("\n")
+                    f.write(commit_msg)
 
 
 if __name__ == '__main__':
