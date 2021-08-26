@@ -1,6 +1,6 @@
 -   id: feature-defect-rally
     name: Rally user story and defect URL's
     description: Adds Rally user story and defect URL's based on the feature/defect name
-    entry: feature-defect-rally
-    language: script
+    entry: feature-defect-rally.py
+    language: python
     stages: [prepare-commit-msg]
