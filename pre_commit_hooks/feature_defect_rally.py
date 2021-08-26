@@ -119,7 +119,7 @@ def main() -> None:
     else:
         if len(sys.argv) < 4:
             print("too few arguments for a prepare-commit-msg hook")
-            sys.exit(1)
+            return 1
         commit_msg_file, commit_source, sha1 = sys.argv[1:4]
         command = "git rev-parse --abbrev-ref HEAD"
         process = subprocess.run(command.split(' '), capture_output=True, text=True)
@@ -127,14 +127,14 @@ def main() -> None:
                           process.stdout.strip(), flags=re.IGNORECASE)
         if not match:
             print("no valid user story or defect ID in the branch name")
-            sys.exit(1)
+            return 1
         formatted_id_list = [match.group(2)]
 
     rally_cache = RallyCache(formatted_id_list)
 
     if len(formatted_id_list) == 0:
         print("no valid ID's specified on the command line")
-        sys.exit(1)
+        return 1
     else:
         if not direct_mode:
             with open(commit_msg_file, "r") as f:
