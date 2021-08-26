@@ -27,7 +27,7 @@ case "$COMMIT_SOURCE,$SHA1" in
     ticket="${BASH_REMATCH[2]}"
     orig=$(cat "${COMMIT_MSG_FILE}")
     #orig=$(cat "${COMMIT_MSG_FILE}" | grep -v "^#")
-    details=$(script/rally-details.py "${ticket}")
+    details=$(scripts/rally-details.py "${ticket}")
     echo "${details}" >"${COMMIT_MSG_FILE}"
     echo "${orig}" >>"${COMMIT_MSG_FILE}"
   fi
