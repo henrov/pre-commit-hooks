@@ -144,5 +144,5 @@ def main() -> None:
                 f.write(commit_msg)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    exit(main())
