@@ -2,4 +2,4 @@
     name: Rally user story and defect URL's
     description: Adds Rally user story and defect URL's based on the feature/defect name
     entry: feature-defect-rally
-    language: python
+    language: shell
