@@ -117,7 +117,7 @@ def main() -> None:
         formatted_id_list = set([arg.upper() for arg in sys.argv[2:]])
         direct_mode = True
     else:
-        commit_msg_file, commit_source, sha1 = sys.argv[1:4]
+        commit_msg_file = sys.argv[1]
         command = "git rev-parse --abbrev-ref HEAD"
         process = subprocess.run(command.split(' '), capture_output=True, text=True)
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
