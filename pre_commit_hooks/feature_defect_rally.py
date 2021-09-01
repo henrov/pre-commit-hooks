@@ -117,7 +117,7 @@ def main() -> None:
         formatted_id_list = set([arg.upper() for arg in sys.argv[2:]])
         direct_mode = True
     else:
-        if len(sys.argv) < 4:
+        if len(sys.argv) < 3:
             print("too few arguments for a prepare-commit-msg hook")
             return 1
         commit_msg_file, commit_source, sha1 = sys.argv[1:4]
