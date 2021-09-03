@@ -31,6 +31,8 @@ class RallyCache:
 
     def __init__(self, formatted_id_list):
         self._formatted_id_list = formatted_id_list
+        # initialize workspace with value from environment; needed for use of cache in case of direct mode
+        self._workspace = os.environ.get('RALLY_WORKSPACE')
 
     def _get_rally_workset(self):
         if self._rally is None:
@@ -45,13 +47,13 @@ class RallyCache:
         return self._rally
 
     def get_rally_details(self, entity, prefix, formatted_id):
-        self._get_rally_workset()
         cache_file_path = self._get_cache_file_for_id(formatted_id)
         # if a cache file exists and is not older than 24h, use that
         if cache_file_path.exists() and (time.time() - os.path.getmtime(cache_file_path)) < 24 * 3600:
             with open(cache_file_path, "r") as f:
                 value = json.load(f)
         else:
+            self._get_rally_workset()
             query_result = self._rally.get(entity, fetch=True,
                                            query=f'FormattedID = "{formatted_id}"',
                                            workspace=self._workspace, project=self._project)
