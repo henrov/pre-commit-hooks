@@ -124,9 +124,9 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 def main() -> None:
 
     if  entity == None or prefix == None:
-	print("-----------------------------------------------------------------------------------")
-	print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-	print("-----------------------------------------------------------------------------------")
+        print("-----------------------------------------------------------------------------------")
+        print("No valid user story or defect ID in the branch name, changelog will not be amended.")
+        print("-----------------------------------------------------------------------------------")
 
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
