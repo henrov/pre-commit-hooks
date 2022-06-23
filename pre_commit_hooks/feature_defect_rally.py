@@ -100,8 +100,6 @@ def get_entity_and_prefix(formatted_id):
     if formatted_id.startswith("DE"):
         entity = ENTITY_DEFECT
         prefix = PREFIX_FIX
-    else entity = ''
-         prefix = ''
     return entity, prefix
 
 
@@ -119,7 +117,8 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 
 # main entry to the program
 def main() -> None:
-    if entity = '' or prefix = '': sys.exit("No US or DE found.")
+    if entity = None or prefix = None
+    	sys.exit("No US or DE found.") 
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
     if len(sys.argv) > 1 and sys.argv[1] == "--":
@@ -132,7 +131,7 @@ def main() -> None:
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
         if not match:
-            print("no valid user story or defect ID in the branch name")
+            sys.exit("no valid user story or defect ID in the branch name")
             return 1
         formatted_id_list = [match.group(2)]
 
