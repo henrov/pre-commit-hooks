@@ -133,19 +133,13 @@ def main() -> None:
         process = subprocess.run(command.split(' '), capture_output=True, text=True)
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
-        
-        
-        if not re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
-                          process.stdout.strip(), flags=re.IGNORECASE):
-            print("-----------------------------------------------------------------------------------")
-            print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-            print("-----------------------------------------------------------------------------------")  
-                          
-                          
-       
+                                
+                            
         if not match:	
-        
-            return 0
+            print("-----------------------------------------------------------------------------------",flush=True)
+            print("No valid user story or defect ID in the branch name, changelog will not be amended.",flush=True)
+            print("-----------------------------------------------------------------------------------",flush=True) 
+        return 0
             
         formatted_id_list = [match.group(2)]
 
