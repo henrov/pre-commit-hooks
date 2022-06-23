@@ -124,10 +124,7 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 # main entry to the program
 def main() -> None:
 
-    if  entity = 'Not found' or prefix = 'Not found':
-        print("-----------------------------------------------------------------------------------")
-        print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-        print("-----------------------------------------------------------------------------------")
+        
 
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
@@ -140,6 +137,12 @@ def main() -> None:
         process = subprocess.run(command.split(' '), capture_output=True, text=True)
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
+        
+        if  entity = 'Not found' or prefix = 'Not found':
+		print("-----------------------------------------------------------------------------------")
+        	print("No valid user story or defect ID in the branch name, changelog will not be amended.")
+        	print("-----------------------------------------------------------------------------------")
+        
         if not match:	
             return 0
             
