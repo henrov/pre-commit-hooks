@@ -117,8 +117,10 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 
 # main entry to the program
 def main() -> None:
+
+#henor changes 
     echo " Starting main" 
-    if entity = None or prefix = None
+    if entity = None or prefix = None:
     	sys.exit("No US or DE found.") 
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
