@@ -90,7 +90,7 @@ def get_message_line(entity, prefix, result_row):
     if parent is None:
         return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name}"
     else:
-        return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name} ({parent.FormattedID} - {parent.Name})"
+ 	return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name} ({parent.FormattedID} - {parent.Name})"
 
 
 def get_entity_and_prefix(formatted_id):
@@ -103,9 +103,8 @@ def get_entity_and_prefix(formatted_id):
         entity = ENTITY_DEFECT
         prefix = PREFIX_FIX
     else:
-    	entity = 'UNKNOWN' 
-        prefix = 'UNKNOWN'
-    	
+	entity = 'UNKNOWN' 
+	prefix = 'UNKNOWN'
     return entity, prefix
 
 
@@ -125,9 +124,9 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 def main() -> None:
 
     if  entity = 'UNKNOWN' and prefix = 'UNKNOWN' :
-    	    print("-----------------------------------------------------------------------------------")
-            print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-            print("-----------------------------------------------------------------------------------")
+	print("-----------------------------------------------------------------------------------")
+	print("No valid user story or defect ID in the branch name, changelog will not be amended.")
+	print("-----------------------------------------------------------------------------------")
 
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
