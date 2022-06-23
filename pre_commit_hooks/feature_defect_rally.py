@@ -102,9 +102,9 @@ def get_entity_and_prefix(formatted_id):
     if formatted_id.startswith("DE"):
         entity = ENTITY_DEFECT
         prefix = PREFIX_FIX
-    else:
-	entity = 'UNKNOWN' 
-	prefix = 'UNKNOWN'
+#    else:
+#	entity = 'UNKNOWN' 
+#	prefix = 'UNKNOWN'
     return entity, prefix
 
 
@@ -123,7 +123,7 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 # main entry to the program
 def main() -> None:
 
-    if  entity = 'UNKNOWN' and prefix = 'UNKNOWN' :
+    if  entity = None and prefix = None:
 	print("-----------------------------------------------------------------------------------")
 	print("No valid user story or defect ID in the branch name, changelog will not be amended.")
 	print("-----------------------------------------------------------------------------------")
