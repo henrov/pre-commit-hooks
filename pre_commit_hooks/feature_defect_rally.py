@@ -138,14 +138,8 @@ def main() -> None:
         if not match:	
             print("-----------------------------------------------------------------------------------")
             print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-            print("-----------------------------------------------------------------------------------")
-            print("-----------------------------------------------------------------------------------")
-            print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-            print("-----------------------------------------------------------------------------------")
-            print("-----------------------------------------------------------------------------------")
-            print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-            print("-----------------------------------------------------------------------------------")           
-            return 0
+            print("-----------------------------------------------------------------------------------")          
+            return 1
             
         formatted_id_list = [match.group(2)]
 
