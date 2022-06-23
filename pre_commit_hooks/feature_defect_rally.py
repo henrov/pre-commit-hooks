@@ -138,10 +138,10 @@ def main() -> None:
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
         
-        if  entity == 'Not found' or prefix == 'Not found':
-		print("-----------------------------------------------------------------------------------")
-        	print("No valid user story or defect ID in the branch name, changelog will not be amended.")
-        	print("-----------------------------------------------------------------------------------")
+        if entity == 'Not found' or prefix == 'Not found':
+            print("-----------------------------------------------------------------------------------")
+            print("No valid user story or defect ID in the branch name, changelog will not be amended.")
+            print("-----------------------------------------------------------------------------------")
         
         if not match:	
             return 0
