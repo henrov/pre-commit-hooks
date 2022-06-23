@@ -102,7 +102,8 @@ def get_entity_and_prefix(formatted_id):
     if formatted_id.startswith("DE"):
         entity = ENTITY_DEFECT
         prefix = PREFIX_FIX
-    else entity = 'UNKNOWN' 
+    else:
+    	entity = 'UNKNOWN' 
          prefix = 'UNKNOWN'
     	
     return entity, prefix
