@@ -111,14 +111,14 @@ def get_parent_and_url(entity, object_id, project_id, rls):
         url = URL_USER_STORY.format(project_id, object_id)
     if entity == ENTITY_DEFECT:
         parent = None
-        url = URL_DEFECT.format(project_id, object_id)
+        url = URL_DEFECT.format(project_id, object_id)    	
     return parent, url
 
 
 # main entry to the program
 def main() -> None:
 
-#henor changes 
+#henro changes 
     echo " Starting main" 
     if entity = None or prefix = None:
     	sys.exit("No US or DE found.") 
