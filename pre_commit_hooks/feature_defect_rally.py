@@ -32,6 +32,8 @@ class RallyCache:
     _rally = None
     _workspace = None
     _project = None
+    
+    
 
     def __init__(self, formatted_id_list):
         self._formatted_id_list = formatted_id_list
@@ -130,6 +132,7 @@ def main() -> None:
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
         if not match:
+            echo " ik ga er uit" 	
             sys.exit("no valid user story or defect ID in the branch name")
             return 1
         formatted_id_list = [match.group(2)]
