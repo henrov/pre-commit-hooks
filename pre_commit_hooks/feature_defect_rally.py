@@ -16,6 +16,7 @@ PREFIX_FEAT = 'feat'
 ENTITY_USER_STORY = 'UserStory'
 ENTITY_DEFECT = 'Defect'
 
+
 # parameter 0 = project id, parameter 1 = object id
 URL_USER_STORY = "https://rally1.rallydev.com/#/{0}/dashboard?detail=%2Fuserstory%2F{1}"
 URL_DEFECT = "https://rally1.rallydev.com/#/{0}/dashboard?detail=%2Fdefect%2F{1}"
@@ -23,6 +24,9 @@ URL_DEFECT = "https://rally1.rallydev.com/#/{0}/dashboard?detail=%2Fdefect%2F{1}
 # parameter 0 = workspace, parameter 1 = formatted id
 GIT_LOG_RALLY_CACHE = "~/.git-log-rally-cache/{0}/{1}"
 
+# https://rally1.rallydev.com/#/349498782336d/iterationstatus?detail=%2Fuserstory%2F640795934475&view=6aa90802-1bff-4a7e-9ece-b04344c6750a
+# projectid 49498782336d
+# objectid  640795934475
 
 class RallyCache:
     _rally = None
@@ -96,6 +100,8 @@ def get_entity_and_prefix(formatted_id):
     if formatted_id.startswith("DE"):
         entity = ENTITY_DEFECT
         prefix = PREFIX_FIX
+    else entity = ''
+         prefix = ''
     return entity, prefix
 
 
@@ -113,6 +119,7 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 
 # main entry to the program
 def main() -> None:
+    if entity = '' or prefix = '': sys.exit("No US or DE found.")
     direct_mode = False
     # get the list of formatted id's from the command-line arguments if a "--" was set
     if len(sys.argv) > 1 and sys.argv[1] == "--":
