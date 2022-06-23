@@ -134,12 +134,12 @@ def main() -> None:
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
         
-        if not match:
+        
+        if not match:	
             print("-----------------------------------------------------------------------------------")
             print("No valid user story or defect ID in the branch name, changelog will not be amended.")
             print("-----------------------------------------------------------------------------------")
-        
-        if not match:	
+            flush()
             return 0
             
         formatted_id_list = [match.group(2)]
