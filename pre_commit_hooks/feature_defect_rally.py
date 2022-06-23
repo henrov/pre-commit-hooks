@@ -140,7 +140,7 @@ def main() -> None:
             print("-----------------------------------------------------------------------------------",flush=True)
             print("No valid user story or defect ID in the branch name, changelog will not be amended.",flush=True)
             print("-----------------------------------------------------------------------------------",flush=True) 
-        return 0
+            return 0
             
         formatted_id_list = [match.group(2)]
 
