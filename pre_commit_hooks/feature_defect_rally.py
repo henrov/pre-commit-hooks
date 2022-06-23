@@ -127,7 +127,6 @@ def main() -> None:
     if len(sys.argv) > 1 and sys.argv[1] == "--":
         formatted_id_list = set([arg.upper() for arg in sys.argv[2:]])
         direct_mode = True
-        print("Matches" )
     else:
         commit_msg_file = sys.argv[1]
         command = "git rev-parse --abbrev-ref HEAD"
@@ -140,7 +139,7 @@ def main() -> None:
             print("-----------------------------------------------------------------------------------")
             print("No valid user story or defect ID in the branch name, changelog will not be amended.")
             print("-----------------------------------------------------------------------------------")          
-            return 0
+          #  return 0
             
         formatted_id_list = [match.group(2)]
 
