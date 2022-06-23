@@ -131,9 +131,8 @@ def main() -> None:
         process = subprocess.run(command.split(' '), capture_output=True, text=True)
         match = re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
                           process.stdout.strip(), flags=re.IGNORECASE)
-        if not match:
-            echo " ik ga er uit" 	
-            sys.exit("no valid user story or defect ID in the branch name")
+        if not match:	
+            sys.exit("henro: no valid user story or defect ID in the branch name")
             return 1
         formatted_id_list = [match.group(2)]
 
