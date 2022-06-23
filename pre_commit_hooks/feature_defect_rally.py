@@ -90,7 +90,7 @@ def get_message_line(entity, prefix, result_row):
     if parent is None:
         return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name}"
     else:
- 	return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name} ({parent.FormattedID} - {parent.Name})"
+        return f"{prefix}: [{result_row.FormattedID}]({url}) CONTEXT {result_row.Name} ({parent.FormattedID} - {parent.Name})"
 
 
 def get_entity_and_prefix(formatted_id):
@@ -123,7 +123,7 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 # main entry to the program
 def main() -> None:
 
-    if  entity == None or prefix == None:
+    if  entity is None or prefix is None:
         print("-----------------------------------------------------------------------------------")
         print("No valid user story or defect ID in the branch name, changelog will not be amended.")
         print("-----------------------------------------------------------------------------------")
