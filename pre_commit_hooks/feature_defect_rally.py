@@ -136,7 +136,7 @@ def main() -> None:
         
         
         if not re.search(r'(feature|defect|hotfix)/(US[0-9]{2,}|DE[0-9]{2,})',
-                          process.stdout.strip(), flags=re.IGNORECASE)
+                          process.stdout.strip(), flags=re.IGNORECASE):
             print("-----------------------------------------------------------------------------------")
             print("No valid user story or defect ID in the branch name, changelog will not be amended.")
             print("-----------------------------------------------------------------------------------")  
