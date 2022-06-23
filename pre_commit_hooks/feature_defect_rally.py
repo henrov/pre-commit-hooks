@@ -135,8 +135,9 @@ def main() -> None:
             print("-----------------------------------------------------------------------------------")
             print("No valid user story or defect ID in the branch name, changelog will not be amended.")
             print("-----------------------------------------------------------------------------------")
-            sys.exit(0)
             return 1
+            sys.exit(0)
+            
         formatted_id_list = [match.group(2)]
 
     rally_cache = RallyCache(formatted_id_list)
