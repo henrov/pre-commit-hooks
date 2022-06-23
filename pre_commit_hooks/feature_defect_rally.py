@@ -35,6 +35,7 @@ class RallyCache:
     
 
 
+
     def __init__(self, formatted_id_list):
         self._formatted_id_list = formatted_id_list
         # initialize workspace with value from environment; needed for use of cache in case of direct mode
