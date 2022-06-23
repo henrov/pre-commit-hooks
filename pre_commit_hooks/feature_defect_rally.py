@@ -117,6 +117,7 @@ def get_parent_and_url(entity, object_id, project_id, rls):
 
 # main entry to the program
 def main() -> None:
+    echo " Starting main" 
     if entity = None or prefix = None
     	sys.exit("No US or DE found.") 
     direct_mode = False
