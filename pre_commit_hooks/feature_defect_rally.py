@@ -104,7 +104,7 @@ def get_entity_and_prefix(formatted_id):
         prefix = PREFIX_FIX
     else:
     	entity = 'UNKNOWN' 
-         prefix = 'UNKNOWN'
+        prefix = 'UNKNOWN'
     	
     return entity, prefix
 
